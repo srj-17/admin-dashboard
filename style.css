@@ -46,12 +46,6 @@
     height: 50px;
 }
 
-
-.main {
-    grid-area: main;
-    background-color: #17BEBB;
-}
-
 /* --- header --- */
 .header {
     padding: var(--std-padding) 30px;
@@ -103,8 +97,13 @@
 
 /* main */
 .main {
+    grid-area: main;
+    background-color: #17BEBB;
+
     display: grid;
     grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "projects-container extras";
 }
 
     /* inside main */
@@ -113,7 +112,7 @@
 .main .trending-container {
     padding: calc(var(--std-padding) / 2);
     display: grid;
-    grid-template-rows: 30px 1fr;
+    grid-template-rows: 30px;
 }
 
 .projects-container .projects {
@@ -123,16 +122,15 @@
 }
 
 .projects .project {
-    padding: 20px 15px;
-    min-height: 150px;
-}
-
-.project {
     background-color: #76B041;
     border: 5px solid white;
+    
+    padding: 20px 15px;
+    height: 200px;
 }
 
 .main .extras {
+    grid-area: extras;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
 }
@@ -140,7 +138,6 @@
 .announcements-container .announcements {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    max-height: 50%;
     padding: 20px 15px;
 
     gap: 15px;
@@ -150,7 +147,21 @@
     background-color: #76B041;
     border: 5px solid white;
 
+    height: 150px;
+    overflow: hidden;
+    
     /* multi-line ellipse needs external js library */
+}
+
+.trending {
+    display: grid;
+    gap: 15px;
+}
+
+.trending .trending-item {
+    background-color: #76B041;
+    border: 5px solid white;
+    padding: var(--std-padding);
 }
 
 ul {
