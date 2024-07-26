@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --header-bgcolor: blue;
+}
+
+/* --- main container --- */
+
+.container {
+    /* maybe only use it when the height doesn't reach 100vh or width doesn't reach 100vh or overflows because of it */
+    /* width: 100vw;
+    height: 100vh; */
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+}
+
+/* sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #E4572E;
+
+    display: grid;
+    grid-template-rows: 1fr 4fr 6fr;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+
+.main {
+    grid-area: main;
+    background-color: #17BEBB;
+}
+
+/* --- header --- */
+.header {
+    padding: 0px 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    grid-template-areas: 
+        "search-bar search-bar profile"
+        "greeting greeting actions";
+    /* padding and gap required to make the layout more like the provided */
+}
+
+    /* header has 2 elements, nested which need to be given appropriate number of rows or columns */
+.search-bar {
+    grid-area: search-bar;
+}
+
+.profile {
+    grid-area: profile;
+    
+    display: grid;
+    grid-auto-flow: column; /* extra elements on grid are given as much width as their content */
+    grid-template-columns: 30px 30px;
+}
+        /* profile has further 2 elements which need to be nested because image is inline, and inline elements
+            don't sit on baseline in normal block-flow */
+.profile-pic img{
+    border-radius: 50%;
+}
+
+.greeting {
+    grid-area: greeting;
+
+    display: grid;
+    grid-template-columns: 60px;
+    grid-template-rows: 60px;
+    grid-auto-flow: column;
+}
+
+.greeting img {
+    width: 100%;
+    height: 100%;
+}
+
+.actions {
+    grid-area: actions;
+}
+
+/* main */
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+    /* inside main */
+.main .extras {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
