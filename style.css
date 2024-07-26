@@ -5,6 +5,7 @@
 
 :root {
     --header-bgcolor: blue;
+    --std-padding: 20px;
 }
 
 /* --- main container --- */
@@ -13,7 +14,6 @@
     /* maybe only use it when the height doesn't reach 100vh or width doesn't reach 100vh or overflows because of it */
     /* width: 100vw;
     height: 100vh; */
-    padding: 10px;
 
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -26,9 +26,17 @@
 .sidebar {
     grid-area: sidebar;
     background-color: #E4572E;
+    padding: var(--std-padding);
 
     display: grid;
-    grid-template-rows: 1fr 4fr 6fr;
+    /* grid-template-rows: 1fr 4fr 6fr; */
+    gap: 50px;
+}
+
+.sidebar .brand {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
 }
 
 .logo img {
@@ -44,7 +52,7 @@
 
 /* --- header --- */
 .header {
-    padding: 0px 30px;
+    padding: var(--std-padding) 30px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -98,7 +106,30 @@
 }
 
     /* inside main */
+.main .projects-container {
+    padding: calc(var(--std-padding) / 2);
+    display: grid;
+    grid-template-rows: 30px 1fr;
+}
+
+.projects-container .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
 .main .extras {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+}
+
+
+
+.project {
+    background-color: #76B041;
+    border: 5px solid white;
+}
+
+ul {
+    list-style-type: none;
 }
