@@ -31,6 +31,7 @@
     display: grid;
     /* grid-template-rows: 1fr 4fr 6fr; */
     gap: 50px;
+    /* TODO -- I MEAN TO FIX */
 }
 
 .sidebar .brand {
@@ -114,8 +115,13 @@
 
 .projects-container .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.projects .project {
+    padding: 20px 15px;
+    min-height: 150px;
 }
 
 .main .extras {
