@@ -19,20 +19,20 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-areas: 
-        "sidebar header"
-        "sidebar main";
+        "sidebar-container header"
+        "sidebar-container main";
 }
 
 /* sidebar */
-.sidebar {
-    grid-area: sidebar;
+.sidebar-container {
+    grid-area: sidebar-container;
     background-color: #E4572E;
-    padding: var(--std-padding);
+}
 
+.sidebar {
+    padding: var(--std-padding);
     display: grid;
-    /* grid-template-rows: 1fr 4fr 6fr; */
     gap: 50px;
-    /* TODO -- I MEAN TO FIX */
 }
 
 .sidebar .brand {
@@ -161,7 +161,6 @@
 .trending .trending-item {
     background-color: #76B041;
     border: 5px solid white;
-    /* padding: var(--std-padding); */
 }
 
 ul {
