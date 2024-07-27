@@ -12,10 +12,6 @@
 /* --- main container --- */
 
 .container {
-    /* maybe only use it when the height doesn't reach 100vh or width doesn't reach 100vh or overflows because of it */
-    /* width: 100vw; */
-    /* max-height: 100%;  */
-
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-areas: 
@@ -52,11 +48,9 @@
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); */
     grid-template-areas: 
         "search-bar search-bar profile"
         "greeting greeting actions";
-    /* padding and gap required to make the layout more like the provided */
 }
 
     /* header has 2 elements, nested which need to be given appropriate number of rows or columns */
@@ -99,6 +93,7 @@
 .main {
     grid-area: main;
     background-color: #17BEBB;
+    padding: 30px var(--std-padding) 50px 20px;
 
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -110,14 +105,17 @@
 .main .projects-container,
 .main .announcements-container,
 .main .trending-container {
-    padding: calc(var(--std-padding) / 2);
     display: grid;
     grid-template-rows: 30px;
 }
 
+.projects-container {
+    margin-right: 20px;
+}
+
 .projects-container .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
