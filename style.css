@@ -152,7 +152,6 @@
 
             /* profile has further 2 elements which need to be nested because image is inline, and inline elements
                 don't sit on baseline in normal block-flow */
-
 .profile-pic img{
     border-radius: 50%;
     width: 40px;
@@ -160,12 +159,36 @@
 }
 
 .greeting {
+    /* because gap property creates gap between rows as well, we don't want that */
+    --gap-between: 20px;
     grid-area: greeting;
 
     display: grid;
-    grid-template-columns: 60px;
-    grid-template-rows: 60px;
-    grid-auto-flow: column;
+    grid-template-columns: 60px 1fr;
+    grid-template-areas: 
+        "profile-pic hi-text"
+        "profile-pic user-handle";
+}
+
+.greeting .profile-pic {
+    grid-area: profile-pic;
+}
+
+.greeting .hi-text {
+    grid-area: hi-text;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    align-self: end;
+    padding-left: var(--gap-between);
+}
+
+.greeting .user-handle {
+    grid-area: user-handle;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: var(--gap-between);
 }
 
 .greeting img {
