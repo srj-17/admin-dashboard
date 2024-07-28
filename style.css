@@ -113,9 +113,12 @@
     gap: 20px;
 }
 
-.search-bar button {
+.search-bar button,
+.profile button {
     display: grid;
     align-items: center;
+    background-color: transparent;
+    border: 0px;
 }
 
 .search-bar input[type="search"] {
@@ -127,23 +130,23 @@
     padding: 10px;
 }
 
-.search-button button {
-    background-color: transparent;
-    border: 0px;
-}
-
 .profile {
     grid-area: profile;
     
     display: grid;
     grid-auto-flow: column; /* extra elements on grid are given as much width as their content */
-    grid-template-columns: 30px 30px;
+    grid-template-columns: 40px 60px;
+    align-items: center;
+    font-weight: bold;
 }
 
             /* profile has further 2 elements which need to be nested because image is inline, and inline elements
                 don't sit on baseline in normal block-flow */
+
 .profile-pic img{
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
 
 .greeting {
