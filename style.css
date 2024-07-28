@@ -39,6 +39,8 @@
     font-size: 1rem;
     display: grid;
     gap: 50px;
+    
+    position: fixed;
 }
 
 .sidebar .brand {
@@ -131,6 +133,7 @@
 }
 
 /* search-bar overflows for widths smaller than 945 px, so decreased its size as soon as it reaches that width */
+/* this could also be used by using another unit than "vw" for width of search bar */
 @media (max-width: 945px) {
     .search-bar input[type="search"] {
         width: 25vw;
