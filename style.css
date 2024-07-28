@@ -3,12 +3,13 @@
     margin: 0;
     line-height: 1.5rem;
     font-family: "Inter", sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
     /* colors */
     --primary-bgcolor: #158583;
-    --header-color: #76b040;
+    --header-color: #50742e;
     --primary-text-color: #e2e8f0;
     --pink: #f09a81;
     --yellow: #ffc914;
@@ -90,6 +91,9 @@
 .header {
     padding: var(--std-padding) 30px;
 
+    background-color: var(--header-color);
+    color: var(--primary-text-color);
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
@@ -100,6 +104,32 @@
         /* header has 2 elements, nested which need to be given appropriate number of rows or columns */
 .search-bar {
     grid-area: search-bar;
+
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-bar button {
+    display: grid;
+    align-items: center;
+}
+
+.search-bar input[type="search"] {
+    border-radius: 15px;
+    border: 0px;
+    width: 38vw;
+    height: 30px;
+    outline: none;
+    padding: 10px;
+}
+
+.search-button button {
+    background-color: transparent;
+    border: 0px;
 }
 
 .profile {
