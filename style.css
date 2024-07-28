@@ -91,7 +91,7 @@
 
     /* --- header --- */
 .header {
-    padding: var(--std-padding) 30px;
+    padding: var(--std-padding) 40px var(--std-padding) 30px;
 
     background-color: var(--header-color);
     color: var(--primary-text-color);
@@ -134,7 +134,7 @@
 
 /* search-bar overflows for widths smaller than 945 px, so decreased its size as soon as it reaches that width */
 /* this could also be used by using another unit than "vw" for width of search bar */
-@media (max-width: 1175px) {
+@media (max-width: 1210px) {
     .search-bar input[type="search"] {
         width: 25vw;
     }
@@ -163,7 +163,7 @@
     display: grid;
     grid-template-columns: 60px 1fr;
     align-items: center;
-    gap: 20px;
+    gap: 28px;
     grid-template-areas: 
         "profile-pic greeting-text";
 }
@@ -189,8 +189,8 @@
 }
 
 .greeting img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
 }
 
 .actions {
