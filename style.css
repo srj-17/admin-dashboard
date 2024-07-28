@@ -126,7 +126,7 @@
 .search-bar input[type="search"] {
     border-radius: 15px;
     border: 0px;
-    width: 38vw;
+    width: 48vw;
     height: 30px;
     outline: none;
     padding: 10px;
@@ -134,7 +134,7 @@
 
 /* search-bar overflows for widths smaller than 945 px, so decreased its size as soon as it reaches that width */
 /* this could also be used by using another unit than "vw" for width of search bar */
-@media (max-width: 945px) {
+@media (max-width: 1175px) {
     .search-bar input[type="search"] {
         width: 25vw;
     }
@@ -142,6 +142,7 @@
 
 .profile {
     grid-area: profile;
+    justify-self: end;
     
     display: grid;
     grid-auto-flow: column; /* extra elements on grid are given as much width as their content */
@@ -194,6 +195,23 @@
 
 .actions {
     grid-area: actions;
+    align-self: center;
+    justify-self: end;
+
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.actions button {
+    border: 0;
+    border-radius: 20px;
+    background-color: var(--primary-bgcolor);
+    padding: 5px 0px;
+    width: 90px;
+    color: var(--primary-text-color);
+    font-weight: bold;
 }
 
 /* --- main --- */
