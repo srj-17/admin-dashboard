@@ -22,7 +22,7 @@
 /* --- main container --- */
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(250px, 1fr) 4fr;
     grid-template-areas: 
         "sidebar-container header"
         "sidebar-container main";
@@ -192,8 +192,8 @@
 }
 
 .greeting img {
-    width: 100%;
-    height: 100%;
+    width: 60px;
+    height: 60px;
 }
 
 .actions {
