@@ -2,15 +2,23 @@
     padding: 0;
     margin: 0;
     line-height: 1.5rem;
+    font-family: "Inter", sans-serif;
 }
 
 :root {
-    --header-bgcolor: blue;
+    /* colors */
+    --primary-bgcolor: #158583;
+    --header-color: #76b040;
+    --primary-text-color: #e2e8f0;
+    --pink: #f09a81;
+    --yellow: #ffc914;
+    --subtle-white: #e2e8f0;
+    --white: #ffffff;
+
     --std-padding: 20px;
 }
 
 /* --- main container --- */
-
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -19,14 +27,15 @@
         "sidebar-container main";
 }
 
-/* sidebar */
+/* --- sidebar-container --- */
 .sidebar-container {
     grid-area: sidebar-container;
-    background-color: #E4572E;
+    background-color: var(--primary-bgcolor);
 }
 
 .sidebar {
     padding: var(--std-padding);
+    font-size: 1rem;
     display: grid;
     gap: 50px;
 }
@@ -35,14 +44,49 @@
     display: grid;
     grid-auto-flow: column;
     align-items: center;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-text-color);
 }
 
-.logo img {
+.sidebar svg {
+    fill: var(--primary-text-color);
+}
+
+.logo svg {
     width: 50px;
     height: 50px;
 }
 
-/* --- header --- */
+.page-links svg,
+.utility-links svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--primary-text-color);
+}
+
+.page-links,
+.utility-links {
+    color: var(--primary-text-color);
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.sidebar ul {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.sidebar li {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    align-items: center;
+    gap: .8rem;
+}
+
+    /* --- header --- */
 .header {
     padding: var(--std-padding) 30px;
 
@@ -53,7 +97,7 @@
         "greeting greeting actions";
 }
 
-    /* header has 2 elements, nested which need to be given appropriate number of rows or columns */
+        /* header has 2 elements, nested which need to be given appropriate number of rows or columns */
 .search-bar {
     grid-area: search-bar;
 }
@@ -65,8 +109,9 @@
     grid-auto-flow: column; /* extra elements on grid are given as much width as their content */
     grid-template-columns: 30px 30px;
 }
-        /* profile has further 2 elements which need to be nested because image is inline, and inline elements
-            don't sit on baseline in normal block-flow */
+
+            /* profile has further 2 elements which need to be nested because image is inline, and inline elements
+                don't sit on baseline in normal block-flow */
 .profile-pic img{
     border-radius: 50%;
 }
@@ -89,7 +134,7 @@
     grid-area: actions;
 }
 
-/* main */
+/* --- main --- */
 .main {
     grid-area: main;
     background-color: #17BEBB;
