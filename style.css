@@ -270,6 +270,7 @@
     font-size: 0.9rem;
 
     display: grid;
+    grid-template-rows: 25px 1fr 30px;
     justify-content: start;
     align-items: start;
 }
@@ -279,6 +280,7 @@
 }
 
 .project .project-text {
+    justify-self: start;
     color: grey
 }
 
