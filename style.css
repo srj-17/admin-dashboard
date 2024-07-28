@@ -95,6 +95,8 @@
 
     background-color: var(--header-color);
     color: var(--primary-text-color);
+    position: relative;
+    /* box-shadow: 3px 0px 5px black; */
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -160,10 +162,10 @@
 }
 
 .greeting {
-    display: grid;
-    grid-template-columns: 60px 1fr;
+    display: grid; 
     align-items: center;
-    gap: 28px;
+    gap: 15px;
+    grid-auto-flow: column;
     grid-template-areas: 
         "profile-pic greeting-text";
 }
@@ -186,6 +188,9 @@
 .greeting .user-handle {
     font-size: 1.2rem;
     font-weight: bold;
+    display: grid;
+    /* can't find another way to stretch the width, always text defaults to min-content width */
+    width: 40vw; 
 }
 
 .greeting img {
@@ -217,8 +222,9 @@
 /* --- main --- */
 .main {
     grid-area: main;
-    background-color: #17BEBB;
+    background-color: var(--subtle-white);
     padding: 30px var(--std-padding) 50px 20px;
+    box-shadow: inset 0 10px 10px -12px black;
 
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -236,6 +242,13 @@
 
 .projects-container {
     margin-right: 20px;
+}
+
+.projects-header,
+.announcements-header,
+.trending-header {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .projects-container .projects {
