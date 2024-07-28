@@ -159,36 +159,32 @@
 }
 
 .greeting {
-    /* because gap property creates gap between rows as well, we don't want that */
-    --gap-between: 20px;
-    grid-area: greeting;
-
     display: grid;
     grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 20px;
     grid-template-areas: 
-        "profile-pic hi-text"
-        "profile-pic user-handle";
+        "profile-pic greeting-text";
 }
 
 .greeting .profile-pic {
     grid-area: profile-pic;
+    display: grid;
+    align-self: center;
+}
+
+.greeting-text {
+    display: grid;
 }
 
 .greeting .hi-text {
-    grid-area: hi-text;
-
     font-size: 0.8rem;
     font-weight: bold;
-    align-self: end;
-    padding-left: var(--gap-between);
 }
 
 .greeting .user-handle {
-    grid-area: user-handle;
-
     font-size: 1.2rem;
     font-weight: bold;
-    padding-left: var(--gap-between);
 }
 
 .greeting img {
