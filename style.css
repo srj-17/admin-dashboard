@@ -278,6 +278,10 @@
     font-weight: bold;
 }
 
+.project .project-text {
+    color: grey
+}
+
 .project .project-utls {
     justify-self: end;
     align-self: flex-end;
