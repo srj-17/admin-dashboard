@@ -12,7 +12,7 @@
     --header-color: #50742e;
     --primary-text-color: #e2e8f0;
     --pink: #f09a81;
-    --yellow: #ffc914;
+    --yellow: #e4b313;
     --subtle-white: #e2e8f0;
     --white: #ffffff;
 
@@ -259,10 +259,31 @@
 
 .projects .project {
     background-color: #76B041;
-    border: 5px solid white;
-    
-    padding: 20px 15px;
+    background-color: var(--white);
+    border-radius: 5% 25%;
+    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.26);
+    border-left: 8px solid var(--yellow);
+    border-top: 3px solid var(--yellow);
+
+    padding: 25px 20px;
     height: 200px;
+    font-size: 0.9rem;
+
+    display: grid;
+    justify-content: start;
+    align-items: start;
+}
+
+.project .project-header {
+    font-weight: bold;
+}
+
+.project .project-utls {
+    justify-self: end;
+    align-self: flex-end;
+
+    display: flex;
+    gap: 20px;
 }
 
 .main .extras {
