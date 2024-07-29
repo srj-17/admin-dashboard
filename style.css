@@ -92,14 +92,14 @@
 
     /* --- header --- */
 .header {
+    /* because the way grid is setup, can't use gap property */
     padding: var(--std-padding) 40px var(--std-padding) 30px;
-
     background-color: var(--header-color);
     color: var(--primary-text-color);
     position: relative;
-    /* box-shadow: 3px 0px 5px black; */
 
     display: grid;
+    row-gap: 4vh;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
         "search-bar search-bar profile"
@@ -109,7 +109,6 @@
         /* header has 2 elements, nested which need to be given appropriate number of rows or columns */
 .search-bar {
     grid-area: search-bar;
-
     width: 100%;
     display: grid;
     grid-auto-flow: column;
@@ -146,7 +145,6 @@
 .profile {
     grid-area: profile;
     justify-self: end;
-    
     display: grid;
     grid-auto-flow: column; /* extra elements on grid are given as much width as their content */
     grid-template-columns: 40px 60px;
@@ -312,7 +310,6 @@
 }   
 
 .announcement {
-    /* background-color: #76B041; */
     border-bottom: 1px solid rgba(128, 128, 128, 0.37);
     margin: 0;
     padding: 14px 0 18px 0;
@@ -346,7 +343,29 @@
 
 .trending .trending-profile {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: 60px 1fr;
+
+}
+
+.trending-profile .trending-profile-info {
+    align-self: center;
+    
+    display: grid;
+    font-size: 0.8rem;
+    grid-auto-rows: 1.2rem;
+}
+
+.trending-profile .trending-profile-handle {
+    font-weight: 500;
+}
+
+.trending-profile .trending-profile-tag {
+    color: grey;
+}
+
+.trending-profile .trending-profile-pic {
+    display: grid;
+    align-items: center;
 }
 
 .trending-profile img {
