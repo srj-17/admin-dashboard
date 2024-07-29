@@ -314,6 +314,7 @@
     /* background-color: #76B041; */
     border-bottom: 1px solid rgba(128, 128, 128, 0.37);
     margin: 0;
+    padding-top: 16px;
     
     overflow: hidden;  
     /* multi-line ellipse needs external js library */
@@ -321,10 +322,6 @@
 
 .announcement:nth-last-child(1) {
     border-bottom: 0;
-}
-
-.announcement {
-    padding-top: 16px;
 }
 
 .announcement-header {
