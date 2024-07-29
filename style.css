@@ -259,7 +259,7 @@
 .projects .project {
     background-color: #76B041;
     background-color: var(--white);
-    border-radius: 5% 25%;
+    border-radius: 5%;
     box-shadow: var(--std-box-shadow);
     border-left: 8px solid var(--yellow);
     border-top: 3px solid var(--yellow);
