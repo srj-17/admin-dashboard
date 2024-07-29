@@ -304,7 +304,7 @@
     grid-template-rows: repeat(3, 1fr);
     
     
-    padding: 20px 15px 0 15px;
+    padding: 8px 15px 0 15px;
     background-color: white;
     border-radius: 8px;
     box-shadow: var(--std-box-shadow);
@@ -323,8 +323,8 @@
     border-bottom: 0;
 }
 
-.announcement:nth-child(n+2) {
-    padding-top: 12px;
+.announcement {
+    padding-top: 16px;
 }
 
 .announcement-header {
