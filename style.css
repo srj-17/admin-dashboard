@@ -299,12 +299,13 @@
     gap: 30px;
 }
 
-.announcements-container .announcements {
+.announcements-container .announcements,
+.trending-container .trending {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     
     
-    padding: 8px 15px 0 15px;
+    padding: 8px 15px 8px 15px;
     background-color: white;
     border-radius: 8px;
     box-shadow: var(--std-box-shadow);
@@ -314,7 +315,7 @@
     /* background-color: #76B041; */
     border-bottom: 1px solid rgba(128, 128, 128, 0.37);
     margin: 0;
-    padding-top: 16px;
+    padding: 14px 0 18px 0;
     
     overflow: hidden;  
     /* multi-line ellipse needs external js library */
@@ -335,7 +336,7 @@
     color: grey;
 }
 
-.trending {
+.trending-container .trending {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     padding: 20px 15px;
@@ -343,9 +344,15 @@
     gap: 15px;
 }
 
-.trending .trending-item {
-    background-color: #76B041;
-    border: 5px solid white;
+.trending .trending-profile {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.trending-profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
 ul {
